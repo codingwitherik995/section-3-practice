@@ -1,5 +1,12 @@
 name: workflow-2
-on: issues
+on:
+  push:
+    branches:
+      - "main"
+    paths-ignore:
+      - ".github/workflows/*"
+  issues:
+    types: [opened, edited, closed]
 jobs:
   details:
     runs-on: ubuntu-latest
